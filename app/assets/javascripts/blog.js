@@ -1,13 +1,3 @@
-jQuery.ajaxSetup({ 
-	'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+$('#new_comment').bind('ajax:complete', function(evt, xhr, status){
+  eval(xhr.responseText);
 });
-
-$(document).ready(function() {
-	$("#new_comment").submit(function() {
-		$.post(this.action, $(this).serialize(), null, "script");
-		
-		return false;
-	});
-	return this;
-});
-
