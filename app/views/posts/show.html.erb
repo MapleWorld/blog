@@ -10,7 +10,7 @@
 <hr />
 
 <div>
-  <%= render 'add_comment' %>
+  <%= render 'add_comment', :remote => true,:html => {:id => "ajax_trigger"} %>
 </div>
 
 <%= link_to "Go Back", posts_path%>
