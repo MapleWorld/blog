@@ -1,0 +1,27 @@
+<h2> Create An Account</h2>
+
+<%= form_for @user do |f| %>
+
+	<% if @user.errors.any? %>
+		<p>Errors:</p>
+
+		<% @user.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+
+	<% end %>
+
+	<p>
+		<%= f.label :username %><br />
+		<%= f.text_field :username %>
+	</p>
+
+	<p>
+		<%= f.label :password %><br />
+		<%= f.text_field :password %>
+	</p>
+
+	<p>
+		<%= f.submit "Create" %>
+	</p>
+<% end %>

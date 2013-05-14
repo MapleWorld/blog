@@ -1,0 +1,11 @@
+<h1>Account Page</h1>
+
+<% @users.each do |user| %>
+	<h2><%= link_to user.username, user %></h2>
+	<%= link_to "Delete", user, :confirm => "Are you sure?", :method => :delete%>
+
+	<hr />
+<% end %>
+
+<p><%= link_to "Create An Account", new_user_path %></p>
+

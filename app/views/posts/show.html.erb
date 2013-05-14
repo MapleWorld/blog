@@ -1,0 +1,17 @@
+<div id="flash_message"></div>
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<hr />
+
+<div id="comments">
+  <%= render :partial => @post.comments %>
+</div>
+
+<hr />
+
+<div>
+  <%= render 'add_comment' %>
+</div>
+
+<%= link_to "Go Back", posts_path%>
+

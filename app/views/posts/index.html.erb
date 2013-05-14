@@ -1,0 +1,29 @@
+<% if session[:current_user_id] == nil %>
+	<%= link_to "Login", logins_path %>
+<% else%>
+	<%= link_to "My Account", User.find(session[:current_user_id])%>
+	<%= link_to "Log Out", login_path("logout"), :method => :delete%>
+
+
+<% end %>
+
+<h1>Blog World</h1>
+
+<hr />
+
+<% @posts.each do |post| %>
+	<% if session[:current_user_id] == nil %>
+		<h2><%= link_to post.title, post %></h2>
+		<p><%= post.content %></p>
+		<hr />
+	<% else%>
+		<% if session[:current_user_id] == post.user.id %>
+
+		<% else%>
+			<h2><%= link_to post.title, post %></h2>
+			<p><%= post.content %></p>
+			<hr />
+
+		<% end %>
+	<% end %>
+<% end %>

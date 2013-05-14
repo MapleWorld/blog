@@ -1,0 +1,19 @@
+
+<div>
+	<h2>Comments</h2>
+	<% @comments.each do |comment| %>
+		<%= comment.id %>
+		<p>
+			<b>Commenter:</b>
+			<%= comment.commenter %>
+		</p>
+	 
+		<p>
+			<b>Comment:</b>
+			<%= comment.body %>
+		</p>
+		<hr />
+	<% end %>
+	
+</div>
+
